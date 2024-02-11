@@ -1,2 +1,2 @@
 # typicalFood
-An app to order typical colombian dishes
+An app to order typical colombian dishes write in Xamarin forms

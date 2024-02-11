@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:InterfazRes.viewModel"
+             x:Class="InterfazRes.Comprar">
+    <ContentPage.BindingContext>
+        <vm:OrderViewModel x:Name="vm"/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <Grid x:Name="casillas" RowDefinitions="150, 130, 215, 440, 350, 80">
+            <BoxView Grid.RowSpan="6">
+            <BoxView.Background>
+                <LinearGradientBrush>
+                    <GradientStopCollection>
+                            <GradientStop Color="#466ae0" Offset="0"/>
+                            <GradientStop Color="#d9325c" Offset="1"/>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+        <Grid>
+            <Path Data="M0,0H375V262.033s-9.025,4.813-55.426-10.71-70.141-83.047-130.3-83.22-83.544,67.7-130.893,83.22S0,262.033,0,262.033Z" 
+                  Aspect="Fill" Fill="#6d5bbd"/>
+                <ImageButton Source="home.png" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start" VerticalOptions="Start" Margin="25, 15, 25, 25" Clicked="home_clicked"/>
+                <ImageButton Source="login.png" WidthRequest="30" HeightRequest="30" HorizontalOptions="End" VerticalOptions="Start" Margin="25, 15, 25, 25" Clicked="login_clicked"/>
+            </Grid>
+        <StackLayout Grid.Row="1" HorizontalOptions="Center" Margin="0,-140,0,0"  Spacing="10">
+            <Grid HeightRequest="210" WidthRequest="210" HorizontalOptions="Center">
+                <Ellipse Stroke="white" StrokeThickness="3" Aspect="Fill"/>
+                    <Image x:Name="BannerImg" Source="Logo1.png" HeightRequest="210" WidthRequest="210" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Grid>
+            <StackLayout  Spacing="15">
+                <Label x:Name="NomPlato" Text="Nombre del plato" TextColor="White" FontAttributes="Italic" FontSize="25" HorizontalOptions="Center" />
+            </StackLayout>
+        </StackLayout>
+            <Frame Grid.Row="2" HorizontalOptions="Start" Margin="15,0,15,10" CornerRadius="10" HasShadow="True" WidthRequest="400">
+                <Frame.Background>
+                    <LinearGradientBrush>
+                        <GradientStopCollection>
+                            <GradientStop Color="#d9325c"  Offset="0"/>
+                            <GradientStop Color="#466ae0" Offset="1"/>
+                        </GradientStopCollection>
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <StackLayout Spacing="10" Padding="10, 5, 10, 10">
+                    <Label Text="Detalles del plato" TextColor="White" FontAttributes="Bold" FontSize="25" HorizontalOptions="Center"/>
+                    <Label x:Name="DescPlato" Text="" TextColor="White" FontSize="18" HorizontalOptions="Start" Margin="0, 10, 0, 0"/>
+                    <Label x:Name="Precio" Text="" TextColor="White" FontSize="18" HorizontalOptions="Start"/>
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Row="3" HorizontalOptions="Start" Margin="15,0,15,10" CornerRadius="10" HasShadow="True" WidthRequest="400">
+                <Frame.Background>
+                    <LinearGradientBrush>
+                        <GradientStopCollection>
+                            <GradientStop Color="#d9325c"  Offset="0"/>
+                            <GradientStop Color="#466ae0" Offset="1"/>
+                        </GradientStopCollection>
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <StackLayout Spacing="10" Padding="10, 5, 20, 10">
+                    <Label Text="Detalles de la venta" TextColor="White" FontAttributes="Bold" FontSize="25" HorizontalOptions="Center"/>
+                    <Entry TextColor="White" Placeholder="Destinatario del pedido" FontSize="18" HorizontalOptions="Start"
+                           IsSpellCheckEnabled="True" IsTextPredictionEnabled="True" IsPassword="False" Keyboard="Text" Margin="0, 10, 0, 0"/>
+                    <Entry TextColor="White" Placeholder="Municipio" FontSize="18" HorizontalOptions="Start"
+                           IsSpellCheckEnabled="True" IsTextPredictionEnabled="True" IsPassword="False" Keyboard="Text"/>
+                    <Entry TextColor="White" Placeholder="Dirección de entrega" FontSize="18" HorizontalOptions="Start"
+                           IsSpellCheckEnabled="True" IsTextPredictionEnabled="True" IsPassword="False" Keyboard="Text"/>
+                    <Label Text="Número de platos:" TextColor="White" FontSize="18" HorizontalOptions="Start" Margin="0, 0, 0, -10"/>
+                    <Picker x:Name="NumPla" TextColor="White" SelectedIndexChanged="pickerNum_SelectedItemIndexChanged">
+                        <Picker.Items>
+                            <x:String>1</x:String>
+                            <x:String>2</x:String>
+                            <x:String>3</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label x:Name="Tiempo"  Text="Tiempo de entrega max.: 30 Min." TextColor="White" FontSize="18" HorizontalOptions="Start"/>
+                    <Label x:Name="PrecioTotal" Text="Precio total: 25.000 pesos." TextColor="White" FontSize="18" HorizontalOptions="Start"/>
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Row="4" HorizontalOptions="Start" Margin="15,0,15,10" CornerRadius="10" HasShadow="True" WidthRequest="400">
+                <Frame.Background>
+                    <LinearGradientBrush>
+                        <GradientStopCollection>
+                            <GradientStop Color="#d9325c"  Offset="0"/>
+                            <GradientStop Color="#466ae0" Offset="1"/>
+                        </GradientStopCollection>
+                    </LinearGradientBrush>
+                </Frame.Background>
+                <StackLayout Spacing="10" Padding="10, 5, 20, 10">
+                    <Label Text="Detalles de pago" TextColor="White" FontAttributes="Bold" FontSize="25" HorizontalOptions="Center"/>
+                    <Label Text="Tipo de tarjeta bancaria:" TextColor="White" FontSize="18" HorizontalOptions="Start" Margin="0, 0, 0, -10"/>
+                    <Picker x:Name="tipo" TextColor="White">
+                        <Picker.Items>
+                            <x:String>Crédito</x:String>
+                            <x:String>Débito</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Label Text="Banco:" TextColor="White" FontSize="18" HorizontalOptions="Start" Margin="0, 0, 0, -10"/>
+                    <Picker x:Name="banco" TextColor="White" SelectedIndexChanged="pickerBanco_SelectedItemIndexChanged">
+                        <Picker.Items>
+                            <x:String>Bancolombia</x:String>
+                            <x:String>Davivienda</x:String>
+                            <x:String>BBVA</x:String>
+                            <x:String>Banco de Bogotá</x:String>
+                            <x:String>Banco de Occidente</x:String>
+                            <x:String>Otro</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Entry x:Name="otro" TextColor="White" Placeholder="Ingrese el nombre de su banco" FontSize="18" HorizontalOptions="Start" Keyboard="Text"
+                           IsSpellCheckEnabled="True" IsTextPredictionEnabled="True" IsPassword="False" IsVisible="False"/>
+                    <Entry TextColor="White" Placeholder="Número de cuenta" FontSize="18" HorizontalOptions="Start" Keyboard="Numeric" IsPassword="False"/>
+                </StackLayout>
+            </Frame>
+            <StackLayout Grid.Row="5" HorizontalOptions="Center" Spacing="10">
+                <Button Text="Comprar" TextColor="White" BackgroundColor="#6d5bbd" WidthRequest="300" HeightRequest="50"
+                                        CornerRadius="10" HorizontalOptions="Center" />
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

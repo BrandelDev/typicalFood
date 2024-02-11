@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InterfazRes.Login">
+    <ContentPage.Content>
+        <Grid RowDefinitions="50, 210, 150, *" RowSpacing="0">
+            <BoxView Grid.RowSpan="4">
+            <BoxView.Background>
+                <LinearGradientBrush>
+                    <GradientStopCollection>
+                        <GradientStop Color="#466ae0" Offset="0"/>
+                        <GradientStop Color="#d9325c" Offset="1"/>
+                    </GradientStopCollection>
+                </LinearGradientBrush>
+            </BoxView.Background>
+            </BoxView>
+            <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
+                <ImageButton Source="home.png" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start" VerticalOptions="Start" Margin="25, 15, 25, 25" Clicked="home_clicked"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand">
+                <Image x:Name="BannerImg" Source="Logo1.png" HeightRequest="160" WidthRequest="160" HorizontalOptions="Center" Margin="0, 25, 0, 0" />
+                <Label Text="Typical Food" TextColor="White" FontSize="25" HorizontalTextAlignment="Center" Margin="0,-25,0,0" FontAttributes="Italic"/>
+            </StackLayout>
+            <StackLayout Grid.Row="2" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" >
+                <Grid ColumnDefinitions="90, 400" RowDefinitions="*, *" ColumnSpacing="5" RowSpacing="0">
+                    <StackLayout Grid.Column="0" Grid.Row="0" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" Margin="0, 20, 0, 0">
+                        <Image Source="email.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" Margin="0, 5, 0, 0" />
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Grid.Row="0" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" Margin="0, 20, 0, 0">
+                        <Entry TextColor="White" Placeholder="Ingrese su correo electrónico" FontSize="18" HorizontalOptions="Start"
+                           IsSpellCheckEnabled="True" IsTextPredictionEnabled="True" IsPassword="False" Keyboard="Text"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="0" Grid.Row="1" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" Margin="0, 20, 0, 0">
+                        <Image Source="pass.png" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" Margin="0, 5, 0, 0" />
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Grid.Row="1" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" Margin="0, 20, 0, 0">
+                        <Entry TextColor="White" Placeholder="Ingrese su contraseña" FontSize="18" HorizontalOptions="Start"
+                           IsSpellCheckEnabled="True" IsTextPredictionEnabled="True" IsPassword="True" Keyboard="Text"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+            <StackLayout Grid.Row="3" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" >
+                <Grid RowDefinitions="*,*" RowSpacing="10">
+                    <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" Margin="0, 10, 0, 0">
+                        <Button Text="Iniciar sesión" TextColor="White" FontSize="16" BackgroundColor="#6d5bbd" WidthRequest="300" HeightRequest="50"
+                                        CornerRadius="10" HorizontalOptions="Center" Clicked="login_clicked" />
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand"  VerticalOptions="FillAndExpand" Margin="0, 0, 0, 0">
+                        <Button Text="Crear cuenta" TextColor="White" FontSize="16" BackgroundColor="Gray" WidthRequest="300" HeightRequest="50"
+                                        CornerRadius="10" HorizontalOptions="Center" Clicked="crearcuenta_clicked"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
